@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">记账</string>
+    <string name="edit_text">记录一笔</string>
+</resources>
