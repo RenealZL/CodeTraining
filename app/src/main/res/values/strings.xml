@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">记账</string>
     <string name="edit_text">记录一笔</string>
+    <string name="month_in">月度收入</string>
+    <string name="month_out">月度支出</string>
+    <string name="budget">预算剩余</string>
 </resources>

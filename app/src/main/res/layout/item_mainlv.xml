@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/item_mainlv_iv"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@mipmap/ic_canyin_fs">
+    </ImageView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/item_mainlv_iv"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/item_mianlv_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试标题"
+            android:textStyle="bold"
+            android:textSize="16sp">
+        </TextView>
+        <TextView
+            android:id="@+id/item_mianlv_tv_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试备注信息"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/item_mianlv_tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHP 25.00"
+            android:textStyle="bold"
+            android:textSize="16sp">
+        </TextView>
+        <TextView
+            android:id="@+id/item_mianlv_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020-01-25 01:00"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp">
+        </TextView>
+    </LinearLayout>
+</RelativeLayout>
