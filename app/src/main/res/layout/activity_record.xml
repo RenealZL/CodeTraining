@@ -6,5 +6,83 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/grey">
+    <RelativeLayout
+        android:id="@+id/record_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/record_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ih_error"
+            android:layout_marginLeft="10dp">
+        </ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/record_iv_back"
+        android:background="@color/white">
+        <EditText
+            android:id="@+id/record_ev_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="花钱"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:inputType="text"
+            android:layout_marginLeft="10dp">
+        </EditText>
+        <EditText
+            android:id="@+id/record_ev_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:inputType="number"
+            android:text="PHP 0"
+            android:layout_marginRight="10dp"
+            android:background="@color/white">
+        </EditText>
+    </RelativeLayout>
+    <View
+        android:id="@+id/record_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey">
+    </View>
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/record_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:keyBackground="@color/grey"
+        android:keyTextColor="@color/black"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingTop="1dp"
+        android:layout_alignParentBottom="true"
+        android:shadowColor="@color/white"
+        android:shadowRadius="0.0"/>
+    <RelativeLayout
+        android:layout_above="@id/record_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/record_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020年10月30日 18:49"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/record_tv_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加备注"
+            android:layout_toLeftOf="@id/record_tv_time"
+            android:padding="10dp"/>
+    </RelativeLayout>
 
 </LinearLayout>
