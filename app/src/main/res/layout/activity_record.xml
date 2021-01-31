@@ -42,7 +42,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:inputType="number"
-            android:text="PHP 0"
             android:layout_marginRight="10dp"
             android:background="@color/white">
         </EditText>
@@ -53,6 +52,28 @@
         android:layout_height="1dp"
         android:background="@color/grey">
     </View>
+    <RelativeLayout
+        android:layout_above="@id/record_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/record_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2021年01月29日 18:49"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp">
+        </TextView>
+        <TextView
+            android:id="@+id/record_tv_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加备注"
+            android:layout_below="@id/record_tv_time"
+            android:padding="10dp">
+        </TextView>
+    </RelativeLayout>
     <android.inputmethodservice.KeyboardView
         android:id="@+id/record_keyboard"
         android:layout_width="match_parent"
@@ -64,26 +85,7 @@
         android:paddingTop="1dp"
         android:layout_alignParentBottom="true"
         android:shadowColor="@color/white"
-        android:shadowRadius="0.0"/>
-    <RelativeLayout
-        android:layout_above="@id/record_keyboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white">
-        <TextView
-            android:id="@+id/record_tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2020年10月30日 18:49"
-            android:layout_alignParentRight="true"
-            android:padding="10dp"/>
-        <TextView
-            android:id="@+id/record_tv_remark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="添加备注"
-            android:layout_toLeftOf="@id/record_tv_time"
-            android:padding="10dp"/>
-    </RelativeLayout>
+        android:shadowRadius="0.0">
+    </android.inputmethodservice.KeyboardView>
 
 </LinearLayout>
