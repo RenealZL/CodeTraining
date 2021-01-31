@@ -1,4 +1,4 @@
-package db;
+package com.example.bookkeepingpractice.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,7 +15,9 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table "
+      String sql = "create table accounttb(id integer primary key autoincrement, title varchar(20), remark varchar(80). amount float," +
+               "time varchar(60), year integer, month integer, day integer)";
+      db.execSQL(sql);
     }
 
     @Override

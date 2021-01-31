@@ -1,4 +1,4 @@
-package utils;
+package com.example.bookkeepingpractice.utils;
 
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
