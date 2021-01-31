@@ -32,8 +32,7 @@
         android:dividerHeight="6dp"
         android:padding="10dp"
         android:scrollbars="none"
-        android:background="@color/grey"
-        >
+        android:background="@color/grey">
     </ListView>
     <Button
         android:id="@+id/main_btn_edit"

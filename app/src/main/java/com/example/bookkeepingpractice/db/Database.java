@@ -15,7 +15,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-      String sql = "create table accounttb(id integer primary key autoincrement, title varchar(20), remark varchar(80). amount float," +
+      String sql = "create table accounttb(id integer primary key autoincrement, title varchar(20), remark varchar(80), amount float," +
                "time varchar(60), year integer, month integer, day integer)";
       db.execSQL(sql);
     }

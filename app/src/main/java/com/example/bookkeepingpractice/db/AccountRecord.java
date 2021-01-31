@@ -78,7 +78,7 @@ public class AccountRecord {
     public AccountRecord() {
     }
 
-    public AccountRecord(int id, String title, String remark, float amount, String time, int year, int month, int day, int kind) {
+    public AccountRecord(int id, String title, String remark, float amount, String time, int year, int month, int day){
         this.id = id;
         this.title = title;
         this.remark = remark;

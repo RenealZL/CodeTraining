@@ -14,6 +14,7 @@ import com.example.bookkeepingpractice.db.AccountRecord;
 import com.example.bookkeepingpractice.db.DBManager;
 import com.example.bookkeepingpractice.utils.KeyBoardUtils;
 import com.example.bookkeepingpractice.utils.RemarkDialog;
+import com.example.bookkeepingpractice.utils.SelectTimeDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,7 +34,6 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_record);
         initView();
         accountRecord = new AccountRecord();
-        accountRecord.setTitle("花钱");
         setInitTime();
     }
 
@@ -57,6 +57,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
                 }
                 float amount = Float.parseFloat(amountSrt);
                 accountRecord.setAmount(amount);
+                accountRecord.setTitle(titleET.getText().toString());
                 saveAccountToDB();
                 finish();
             }
@@ -92,6 +93,7 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         }
         switch (view.getId()) {
             case R.id.record_tv_time:
+                showTimeDialog();
                 break;
             case R.id.record_tv_remark:
                 showRemarkDialog();
@@ -100,11 +102,37 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    public void showRemarkDialog() {
-        RemarkDialog dialog = new RemarkDialog(getBaseContext());
+    private void showTimeDialog() {
+        SelectTimeDialog dialog = new SelectTimeDialog(this);
         dialog.show();
+        dialog.setOnEnsureListener(new SelectTimeDialog.OnEnsureListener() {
+            @Override
+            public void onEnsure(String time, int year, int month, int day) {
+                timeTv.setText(time);
+                accountRecord.setTime(time);
+                accountRecord.setYear(year);
+                accountRecord.setMonth(month);
+                accountRecord.setDay(day);
+            }
+        });
+    }
 
-        dialog.setOnEnsureListener
+    private void showRemarkDialog() {
+        final RemarkDialog dialog = new RemarkDialog(this);
+        dialog.show();
+        dialog.setDialogSize();
+        dialog.setOnEnsureListener(new RemarkDialog.OnEnsureListener() {
+            @Override
+            public void onEnsure() {
+                String msg = dialog.getEditText();
+                if (!TextUtils.isEmpty(msg)) {
+                    remarkTv.setText(msg);
+                    accountRecord.setRemark(msg);
+                }
+                dialog.cancel();
+
+            }
+        });
     }
 
 }
