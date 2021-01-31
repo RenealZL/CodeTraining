@@ -1,6 +1,5 @@
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
 
 android {
     compileSdkVersion 30
@@ -37,4 +36,13 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // 引入基础SDK
+    implementation 'com.huawei.hms:ml-computer-vision-ocr:2.0.1.300'
+    // 引入拉丁语文字识别模型包
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-latin-model:2.0.1.300'
+    // 引入日韩语文字识别模型包
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-jk-model:2.0.1.300'
+    // 引入中英文文字识别模型包
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-cn-model:2.0.1.300'
 }

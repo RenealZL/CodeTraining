@@ -3,12 +3,14 @@ package com.example.bookkeepingpractice;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.bookkeepingpractice.db.AccountRecord;
 import com.example.bookkeepingpractice.db.DBManager;
@@ -135,5 +137,10 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
         });
     }
 
+    public void onClickScn(View view) {
+        Toast.makeText(this,"click",Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, ImageDocumentAnalyseActivity.class));
+
+    }
 }
 

@@ -2,6 +2,7 @@ package com.example.bookkeepingpractice.utils;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,15 +14,20 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.bookkeepingpractice.ImageDocumentAnalyseActivity;
+import com.example.bookkeepingpractice.MainActivity;
 import com.example.bookkeepingpractice.R;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class RemarkDialog extends Dialog implements View.OnClickListener {
     EditText et;
-    Button cancelBtn, ensureBtn;
+    Button cancelBtn, ensureBtn, scanBtn;
     OnEnsureListener onEnsureListener;
 
     public void setOnEnsureListener(OnEnsureListener onEnsureListener) {
@@ -39,6 +45,7 @@ public class RemarkDialog extends Dialog implements View.OnClickListener {
         et = findViewById(R.id.dialog_remark_et);
         cancelBtn = findViewById(R.id.dialog_remark_btn_cancel);
         ensureBtn = findViewById(R.id.dialog_remark_btn_ensure);
+        scanBtn = findViewById(R.id.dialog_remark_btn_scan);
         cancelBtn.setOnClickListener(this);
         ensureBtn.setOnClickListener(this);
     }
@@ -58,6 +65,11 @@ public class RemarkDialog extends Dialog implements View.OnClickListener {
                     onEnsureListener.onEnsure();
                 }
                 break;
+            case R.id.dialog_remark_btn_scan:
+                Toast.makeText(getContext(),"click",Toast.LENGTH_LONG).show();
+                getContext().startActivity(new Intent(getContext(), ImageDocumentAnalyseActivity.class));
+                break;
+
         }
     }
     public String getEditText(){

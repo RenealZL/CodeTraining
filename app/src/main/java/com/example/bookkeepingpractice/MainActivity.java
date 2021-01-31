@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDatas = new ArrayList<>();
         adapter = new AccountAdapter(this, mDatas);
         todayLv.setAdapter(adapter);
-
     }
 
     private void initTime() {
